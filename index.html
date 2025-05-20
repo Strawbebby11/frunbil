@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>furnbil web</title>
+<style>
+    body, html {
+        height: 100%;
+        background-color: rgba(252, 252, 252, 1);
+        margin: 0;
+        font-family: Inter, Urbanist, Arial;
+    }
+
+    header {
+        top: 30px;
+        padding: 14.5px 50px;
+        background-color: rgba(62, 28, 0, 1);
+        color: rgba(221, 212, 205, 1);
+        font-size: 13px;
+        position: relative;
+    }
+
+    /*division*/
+    .container {
+        display: flex;
+    }
+
+    .container > div {
+        width: 50%;
+    }
+
+    .fourparts{
+        display: flex;
+    }
+
+    .fourparts > div{
+        width: 25%;
+    }
+
+    /*text alignment*/
+    .right{
+        text-align: right;
+    }
+
+    .left{
+        text-align: left;
+    }
+
+
+    /*navigation pagination*/
+    .navi {
+        margin: 45px 30px;
+        display: inline-block;
+        text-align: center;
+        font-size: 20px;
+        color: rgba(62, 28, 0, 1);
+        cursor: pointer;
+    }
+
+    .navi a{
+        float: right;
+        text-decoration: none;
+        margin: 0 2px;
+    }
+
+    .navi a.active{
+        background-color: none;
+        color: rgba(252, 113, 0, 0.19);
+    }
+
+
+    /*image stuff*/
+
+    .logo {
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/FURNBIL%20LOGO.png);
+        height: 80px;
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 300px;
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+
+    .una-pic{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/picture%202.png);
+        height: 758px;
+        width: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        object-fit: cover;
+    }
+
+    /*other elements*/
+    .brownBG{
+        background-color: rgba(62, 28, 0, 1);
+        color: rgba(255, 255, 255, 0.92);
+    }
+
+    .centeredFont{
+        text-align: left ;
+        padding-top: 130px;
+        padding-left: 100px;
+        font-size: 75px;
+        font-weight: 400;
+    }
+
+    .regWord-Mid{
+        padding-top: 50px;
+        padding-bottom: 10px;
+        text-align: center;
+        font-size: 75px;
+        font-weight: 400;
+        color: rgba(62, 28, 0, 1);
+    }
+
+    .middle-text{
+        padding: 25px 0;
+        text-align: center;
+    }
+
+    /*about us*/
+    .aboutUs-bg{
+        background-color: rgba(221, 212, 205, 1);
+        color: rgba(62, 28, 0, 1);
+        position: relative;
+        height: 900px;
+    }
+
+    .aboutPic{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/picture%201.png);
+        height: 795px;
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 100pv;
+        border-radius: 50px;
+        margin-top: 50px;
+        margin-left: 50px;
+        margin-right: 50px;
+        object-fit: cover;
+    }
+
+    .aboutWords{
+        text-align: left ;
+        padding-top: 250px;
+        padding-left: 100px;
+        font-size: 30px;
+        font-weight: 300;
+    }
+
+    /*product features*/
+
+    .featuretitle{
+        padding-bottom: 10px;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 400;
+        color: rgba(62, 28, 0, 1);
+    }
+
+    .featuresWords{
+        padding-bottom: 10px;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 400;
+        color: rgba(62, 28, 0, 1);
+    }
+
+    .hover-text {
+        padding: 5%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgba(62, 28, 0, 1);
+        font-size: 15px;
+        font-weight: 650;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        text-align: left;
+    }
+
+    .aesthetics:hover .hover-text {
+        opacity: 1;
+    }
+
+    .versatility:hover .hover-text {
+        opacity: 1;
+    }
+
+    .comfortability:hover .hover-text {
+        opacity: 1;
+    }
+
+    .community:hover .hover-text {
+        opacity: 1;
+    }
+
+    .aesthetics{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/AESTHETICS.png);
+        height: 700px;
+        width: 80%;
+        background-size: 600px;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50px;
+        margin: 10px 45px;
+        object-fit: cover;
+    }
+
+
+    .aesthetics:hover{
+        transition: 0.50s;
+        background-size: 550px;
+        background-image:
+            linear-gradient(rgba(221, 212, 205, 0.8), rgba(221, 212, 205, 0.8)),
+            url('file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/AESTHETICS.png');
+    }
+
+    .versatility{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/VERSATILITY.jpg);
+        height: 700px;
+        width: 80%;
+        background-size: 600px;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50px;
+        margin: 10px 45px;
+        object-fit: cover;
+    }
+
+    .versatility:hover{
+        transition: 0.50s;
+        background-size: 550px;
+        background-image:
+            linear-gradient(rgba(221, 212, 205, 0.8), rgba(221, 212, 205, 0.8)),
+            url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/VERSATILITY.jpg);
+    }
+
+
+    .comfortability{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/COMFORTABILITY.jpg);
+        height: 700px;
+        width: 80%;
+        background-size: 600px;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50px;
+        margin: 10px 45px;
+        object-fit: cover;
+    }
+
+    .comfortability:hover{
+        transition: 0.50s;
+        background-size: 550px;
+        background-image:
+            linear-gradient(rgba(221, 212, 205, 0.8), rgba(221, 212, 205, 0.8)),
+            url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/COMFORTABILITY.jpg);
+    }
+
+    .community{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/COMMUNITY.jpg);
+        height: 700px;
+        width: 80%;
+        background-size: 600px;
+        background-position: right;
+        background-repeat: no-repeat;
+        border-radius: 50px;
+        margin: 10px 45px;
+        object-fit: cover;
+    }
+
+    .community:hover{
+        transition: 0.50s;
+        background-size: 550px;
+        background-image:
+            linear-gradient(rgba(221, 212, 205, 0.8), rgba(221, 212, 205, 0.8)),
+            url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/COMMUNITY.jpg);
+    }
+
+    /*product reviews*/
+
+    .reviewBG{
+        background-color: rgba(221, 212, 205, 1);
+        height: 800px;
+        width: 92%;
+        margin: 80px;
+        border-radius: 50px;
+    }
+
+    .scrolling{
+        display: flex;
+        margin-top: 100px;
+        height: 600px;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        cursor: grab;
+        user-select: none;
+        gap: 20px;
+    }
+
+    .scrolling:active{
+        cursor: grabbing;
+    }
+
+    .reviewTitle{
+        font-size: 40px;
+        color: rgba(62, 28, 0, 1);
+        text-align: center;
+        padding-top: 50px;
+        font-weight: 450;
+    }
+
+    .revbox{
+        flex: 0 0 auto;
+        background-color: rgba(237, 233, 230, 1);
+        border-radius: 25px;
+        height: 450px;
+        width: 400px;
+        margin-top: 50px;
+
+    }
+
+    .revbox > img{
+        margin-top: 15%;
+        margin-left: 37%;
+        object-fit: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 150px;
+        height: 100px;
+        width: 100px;
+        border-radius: 1000px;
+    }
+
+    .revbox > p{
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        height: inherit;
+        width: 90%;
+        text-align: center;
+        padding: 25px;
+        font-size: 15px;
+        font-weight: 250;
+    }
+
+    .img1{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/PFP/reneboypfp.jpg);
+    }
+
+    .img2{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/PFP/reygiepfp.jpg);
+    }
+
+    .img3{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/PFP/rhecapfp.jpg);
+    }
+
+    .img4{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/PFP/acarlpfp.jpg);
+    }
+
+    .img5{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/PFP/chan2pfp.jpg);
+    }
+
+    .img6{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/PFP/leepfp.jpg);
+    }
+
+    .img7{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/PFP/lykapfp.jpg);
+    }
+
+    .img8{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/empress.png);
+    }
+
+    /*visit us*/
+
+    .visitTitle{
+        text-align: center;
+        color: white;
+        padding-top: 25px;
+        font-size: 50px;
+        font-weight: 400;
+    }
+
+    .visit-navi{
+        margin: 5px 35px;
+        display: inline-block;
+        text-align: center;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .designer-profile{
+        display: flex;
+    }
+
+    .designer-profile > p{
+        padding-top: 10%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        text-align: left;
+        color: white;
+        font-size: 20px;
+        font-weight: 200;
+    }    
+    
+    .designer-profile > a{
+        text-align: left;
+        color: white;
+        font-size: 20px;
+        font-weight: 200;
+    }
+
+    .designer-profile > img{
+        margin-left: 30%;
+        margin: 5% auto;
+        object-fit: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 250px;
+        height: 200px;
+        width: 200px;
+        border-radius: 25px;
+    }
+
+    .pfp1{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/CV%20PICS/ANI.jpg);
+    }
+
+    .pfp2{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/CV%20PICS/ARABIS.jpg);
+    }
+
+    .pfp3{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/CV%20PICS/JACK.jpg);
+    }
+
+    .pfp4{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/CV%20PICS/ANGELIC.jpg);
+    }
+
+    .pfp5{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/CV%20PICS/HANNAH.jpg);
+    }
+
+    .pfp6{
+        background-image: url(file:///D:/SCHOOL/WEB%20DESIGN/FURNBIL%20ELEMENTS/CV%20PICS/CLYDE.jpg);
+    }
+
+    /*rights*/
+
+    .rights{
+        text-align: left;
+        padding: 20px;
+        font-size: 15px;
+        font-weight: 300;
+        color: rgba(62, 28, 0, 1);
+    }
+    
+</style>
+<body>
+    <header>
+        <div class="container">
+                <div class="left">
+                    Where design meets todays comfort.
+                </div>
+
+                <div class="right">
+                    English
+                </div>
+        </div>
+    </header>
+    <br>
+    <div class="container">
+        <div class="logo">
+        </div>
+        <div class="container, right">
+            <a class="navi" href="#HOME">HOME</a>
+            <a class="navi" href="#ABOUT">ABOUT</a>
+            <a class="navi" href="#PRODUCT">PRODUCT</a>
+            <a class="navi" href="#REVIEWS">REVIEWS</a>
+            <a class="navi" href="#VISITUS">VISIT US</a>
+        </div>
+    </div>
+    <div class="container" id="HOME">
+        <div class="una-pic">
+        </div>
+        <div class="brownBG"> <p class="centeredFont">
+            Where design <br>meets todays <br>comfort. </p>
+        </div>
+    </div>
+    <div class="aboutUs-bg"  id="ABOUT">
+        <div class="container">
+            <div>
+                <h1 class="centeredFont">
+                    ABOUT US
+                </h1>
+                <p class="aboutWords">
+                    Welcome to Furnbil, where modern design meets<br>todays comfort. Founded with a commitment to<br>innovative design and environmental responsibility,<br>Furnbil has become a leading name in modern<br>furniture.
+                </p>
+            </div>
+            <div class="aboutPic">
+            </div>
+        </div>
+    </div>
+    <h1 class="featuretitle" id="PRODUCT">
+        OUR PRODUCT
+    </h1>
+    <div class="fourparts">
+        <div>
+            <div class="aesthetics">
+                <div class="hover-text">
+                    AESTHETICS<br>
+                    Rooted in minimalist sensibilities, 
+                    Furnbil 2.0 embraces a Japanese-inspired design, 
+                    characterized by clean lines, bold contrasts, 
+                    and purposeful geometry. The black-and-white 
+                    (or black-and-wood) palette enhances its elegant 
+                    and timeless appeal, blending naturally with any 
+                    modern interior. The integrated form of the mini 
+                    chairs tucked seamlessly beneath the desk emphasizes 
+                    harmony, balance, and space consciousness U+2014 core 
+                    tenets of Japanese design.
+                </div>
+            </div>
+            <p class="featuresWords">
+                AESTHETICS
+            </p>
+        </div>
+        <div>
+            <div class="versatility">
+                <div class="hover-text">
+                    VERSATILITY<br>
+                    Furnbil 2.0 adapts to your needs effortlessly. 
+                    Whether you're working, dining, or hosting a guest, 
+                    it transitions fluidly between a functional workspace, 
+                    a compact dining setup, or an occasional seating arrangement. 
+                    The pull-out drawer adds hidden storage for your essentials, 
+                    making it an ideal companion for small apartments, studios, dorms, 
+                    or multi-purpose rooms. Every inch is designed to maximize function 
+                    without compromising form.
+                </div>
+            </div>
+            <p class="featuresWords">
+                VERSATILITY
+            </p>
+        </div>
+        <div>
+            <div class="comfortability">
+                <div class="hover-text">
+                    COMFORT<br>
+                    The twin mini chairs are designed for comfort and accessibility, 
+                    with cushioned seating that fits snugly into the main unit. Despite 
+                    the compact frame, it offers ergonomic support for casual work or 
+                    dining sessions. Its modular design encourages tidy spaces without the 
+                    clutter of traditional furniture, contributing to a calmer, more 
+                    organized environment.
+                </div>
+            </div>
+            <p class="featuresWords">
+                COMFORTABLITY
+            </p>
+        </div>
+        <div>
+            <div class="community">
+                <div class="hover-text">
+                    COMMUNITY & TARGET USERS<br>
+                    Furnbil 2.0 is created for a new generation of urban dwellers, 
+                    digital nomads, students, young professionals, and space-conscious
+                    families. It's perfect for those living in compact spaces, from 
+                    micro-apartments to shared accommodations. Whether you're downsizing, 
+                    optimizing, or just prefer intentional living, Furnbil 2.0 supports 
+                    your lifestyle with thoughtful, sustainable design and multifunctionality.
+                </div>
+            </div>
+            <p class="featuresWords">
+                COMMUNITY
+            </p>
+        </div>
+    </div>
+    <div class="reviewBG" id="REVIEWS">
+        <h1 class="reviewTitle">
+            what our client says...
+        </h1>
+        <div class="scrolling">
+            <div class="revbox">
+                <img class="img1"></img>
+                <p>
+                    Chuya man oii, maka palit man tag ahat ana erp. Bagay kaayo na sa
+                    akoang kwarto puhon maayong lawas.
+                </p>
+            </div>
+            <div class="revbox">
+                <img class="img2"></img>
+                <p>
+                    Part bagay lagi nas among balay, ako nlang na bi HAHAHAHAHAAH
+                </p>
+            </div>
+            <div class="revbox">
+                <img class="img3"></img>
+                <p>
+                    gwapa ang furnbil liwat sa ako HAAHAHAHAHHA
+                </p>
+            </div>
+            <div class="revbox">
+                <img class="img4"></img>
+                <p>Part maka inlab lagii inyong product? Ako nana palihug bi, sakar kaynas ako BH. Bayran nakog baynte HAHAHAHAHAAH</p>
+            </div>
+            <div class="revbox">
+                <img class="img5"></img>
+                <p>
+                    Lami jud sya, ikaw nlay buhat2 ana oi HAHHAHAAH piskot
+                </p>
+            </div>
+            <div class="revbox">
+                <img class="img6"></img>
+                <p>
+                    Delicious. Proven and tasted.
+                </p>
+            </div>
+            <div class="revbox">
+                <img class="img7"></img>
+                <p>
+                    Hoii ganahan kayko sa inyong table ayy, nindot kaayo syapang tagay bahalag dli ko mo tagay HAHHAHAHAHAAHA
+                </p>
+            </div>
+            <div class="revbox">
+                <img class="img8"></img>
+                <p>
+                    Nindot tagayan, very durable
+                </p>
+            </div>            
+        </div>
+         <script>
+    const slider = document.querySelector('.scrolling');
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      slider.classList.add('active');
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 2; // adjust scroll speed
+      slider.scrollLeft = scrollLeft - walk;
+    });
+  </script>
+    </div>
+    <div class="brownBG" id="VISITUS">
+        <h1 class="visitTitle">
+            VISIT US
+        </h1>
+        <div class="middle-text">
+            <a class="visit-navi" href="https://www.instagram.com/" target="_blank">INSTAGRAM</a>
+            <a class="visit-navi" href="https://www.facebook.com/" target="_blank">FACEBOOK</a>
+            <a class="visit-navi" href="https://www.gmail.com/" target="_blank">EMAIL</a>
+        </div>
+        <div class="fourparts">
+            <div class="designer-profile">
+                <img class="pfp1"></img>
+            </div>
+            <div class="designer-profile">
+                <p>Name: Marcelo Ani Jr.<br>
+                    Age: 22 years old<br>
+                    
+                    Contact Info: 
+                    <br>09927690120<br>
+                    marceloanix@gmail.com</p>
+            </div>
+            <div class="designer-profile">
+                <img class="pfp2"></img>
+            </div>
+            <div class="designer-profile">
+                <p>Name: James Arabis<br>
+                    Age: 21 years old<br>
+                    
+                    Contact Info: 
+                    <br>09924594060<br>
+                    jamesarabis14@gmail.com</p>
+            </div>
+        </div>
+        <div class="fourparts">
+            <div class="designer-profile">
+                <img class="pfp3"></img>
+            </div>
+            <div class="designer-profile">
+                <p>Name: Jack Israel Calamian<br>
+                    Age: 21 years old<br>
+                    Contact Info: 
+                    <br>09924594060<br>
+                    jackisraelcalamian@gmail.com</p>
+            </div>
+            <div class="designer-profile">
+                <img class="pfp4"></img>
+            </div>
+            <div class="designer-profile">
+                <p>Name: Angelic Claire Carbonero<br>
+                    Age: 21 years old<br>
+                    Contact Info: 
+                    <br>09924089905<br>
+                    carbonero1234angelic@gmail.com</p>
+            </div>
+        </div>
+        <div class="fourparts">
+            <div class="designer-profile">
+                <img class="pfp5"></img>
+            </div>
+            <div class="designer-profile">
+                <p>Name: Hannah Joy Codino<br>
+                    Age: 20 years old<br>
+                    
+                    Contact Info: 
+                    <br>09384763853<br>
+                    hannahjtc@gmail.com</p>
+            </div>
+            <div class="designer-profile">
+                <img class="pfp6"></img>
+            </div>
+            <div class="designer-profile">
+                <p>Name: James Clyde Nepomuceno<br>
+                    Age: 24 years<br>
+                    
+                    Contact Info: 
+                    <br>09436530195<br>
+                    jamesclyde766@gmail.com</p>
+            </div>
+        </div>
+    </div>
+    <p class="rights">
+        All rights reserved 2024-2025 Furnbil 2.0 design
+    </p>
+</body>
+</head>
+</html>
